@@ -14,6 +14,9 @@ extern "C"
 #endif
 
 namespace rcpc {
+    const double version = 1.1;
+
+    double getVersion();
     void nextTrack();
     void prevTrack();
     void stop();
