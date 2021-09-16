@@ -1,8 +1,9 @@
+#define WINVER 0x0600
+#define _WIN32_WINNT 0x0600
+
 #include <EndPointVolume.h>
 #include <initguid.h>
 #include <mmdeviceapi.h>
-#include <stdio.h>
-#include <windows.h>
 
 #include "main.h"
 
@@ -133,5 +134,10 @@ namespace rcpc {
         releaseIAudioEndpointVolume(IAudioEndpointVolume);
 
         return volume;
+    }
+
+    void scroll(float distanceX, float distanceY){
+        mouse_event(MOUSEEVENTF_HWHEEL, 0, 0, distanceX, 0);
+        mouse_event(MOUSEEVENTF_WHEEL, 0, 0,distanceY, 0);
     }
 }
